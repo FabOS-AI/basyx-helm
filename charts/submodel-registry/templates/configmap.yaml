@@ -1,0 +1,10 @@
+{{- if .Values.env | len | ne 0 }}
+apiVersion: v1
+data:
+{{- range $k, $v := .Values.env }}
+  {{ $k }}: "{{ $v }}"
+{{- end }}
+kind: ConfigMap
+metadata:
+  name: {{ include "submodel-registry.fullname" . }}
+{{- end }}
