@@ -107,5 +107,7 @@ tolerations: []
 affinity: {}
 
 env:
+  BASYX_CORS_ALLOWEDORIGINS: "*"
+  BASYX_CORS_ALLOWEDMETHODS: GET,POST,PATCH,DELETE,PUT,OPTIONS,HEAD
   BASYX_SUBMODELREPOSITORY_FEATURE_REGISTRYINTEGRATION: http://submodel-registry.basyx.aas
   BASYX_EXTERNALURL: http://submodel-repository.basyx.aas

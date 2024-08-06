@@ -108,5 +108,7 @@ tolerations: []
 affinity: {}
 
 env:
+  BASYX_CORS_ALLOWEDORIGINS: "*"
+  BASYX_CORS_ALLOWEDMETHODS: GET,POST,PATCH,DELETE,PUT,OPTIONS,HEAD
   BASYX_AASREPOSITORY_FEATURE_REGISTRYINTEGRATION: http://shell-registry.basyx.aas
   BASYX_EXTERNALURL: http://shell-repository.basyx.aas
