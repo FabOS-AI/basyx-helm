@@ -1,0 +1,89 @@
+# Default values for basyx-multi.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+
+provider:
+  enabled: true
+  shell-registry:
+    nameOverride: provider-shell-registry
+    ingress:
+      hosts:
+        - host: provider.shell-registry.basyx.aas
+          paths:
+          - path: /
+            pathType: ImplementationSpecific
+  submodel-registry:
+    nameOverride: provider-submodel-registry
+    ingress:
+      hosts:
+        - host: provider.submodel-registry.basyx.aas
+          paths:
+          - path: /
+            pathType: ImplementationSpecific
+  shell-repository:
+    nameOverride: provider-shell-repository
+    ingress:
+      hosts:
+        - host: provider.shell-repository.basyx.aas
+          paths:
+          - path: /
+            pathType: ImplementationSpecific
+  submodel-repository:
+    nameOverride: provider-submodel-repository
+    ingress:
+      hosts:
+        - host: provider.submodel-repository.basyx.aas
+          paths:
+          - path: /
+            pathType: ImplementationSpecific
+  aas-ui:
+    nameOverride: provider-aas-ui
+    ingress:
+      hosts:
+        - host: provider.aas-ui.basyx.aas
+          paths:
+          - path: /
+            pathType: ImplementationSpecific
+consumer:
+  enabled: true
+  shell-registry:
+    nameOverride: consumer-shell-registry
+    ingress:
+      hosts:
+        - host: consumer.shell-registry.basyx.aas
+          paths:
+          - path: /
+            pathType: ImplementationSpecific
+  submodel-registry:
+    nameOverride: consumer-submodel-registry
+    ingress:
+      hosts:
+        - host: consumer.submodel-registry.basyx.aas
+          paths:
+          - path: /
+            pathType: ImplementationSpecific
+  shell-repository:
+    nameOverride: consumer-shell-repository
+    ingress:
+      hosts:
+        - host: consumer.shell-repository.basyx.aas
+          paths:
+          - path: /
+            pathType: ImplementationSpecific
+  submodel-repository:
+    nameOverride: consumer-submodel-repository
+    ingress:
+      hosts:
+        - host: consumer.submodel-repository.basyx.aas
+          paths:
+          - path: /
+            pathType: ImplementationSpecific
+  aas-ui:
+    nameOverride: consumer-aas-ui
+    ingress:
+      hosts:
+        - host: consumer.aas-ui.basyx.aas
+          paths:
+          - path: /
+            pathType: ImplementationSpecific

@@ -1,0 +1,60 @@
+# Default values for basyx.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+shell-registry:
+  enabled: true
+  nameOverride:
+  ingress:
+    hosts:
+      - host: shell-registry.basyx.aas
+        paths:
+          - path: /
+            pathType: ImplementationSpecific
+submodel-registry:
+  enabled: true
+  nameOverride:
+  ingress:
+    hosts:
+      - host: submodel-registry.basyx.aas
+        paths:
+          - path: /
+            pathType: ImplementationSpecific
+shell-repository:
+  enabled: true
+  nameOverride:
+  ingress:
+    hosts:
+      - host: shell-repository.basyx.aas
+        paths:
+          - path: /
+            pathType: ImplementationSpecific
+  env:
+    BASYX_AASREPOSITORY_FEATURE_REGISTRYINTEGRATION: http://shell-registry.basyx.aas
+    BASYX_EXTERNALURL: http://shell-repository.basyx.aas
+submodel-repository:
+  enabled: true
+  nameOverride:
+  ingress:
+    hosts:
+      - host: submodel-repository.basyx.aas
+        paths:
+          - path: /
+            pathType: ImplementationSpecific
+  env:
+    BASYX_SUBMODELREPOSITORY_FEATURE_REGISTRYINTEGRATION: http://submodel-registry.basyx.aas
+    BASYX_EXTERNALURL: http://submodel-repository.basyx.aas
+aas-ui:
+  enabled: true
+  nameOverride:
+  ingress:
+    hosts:
+      - host: aas-ui.basyx.aas
+        paths:
+          - path: /
+            pathType: ImplementationSpecific
+  env:
+    AAS_REGISTRY_PATH: http://shell-registry.basyx.aas/shell-descriptors
+    SUBMODEL_REGISTRY_PATH: http://submodel-registry.basyx.aas/submodel-descriptors
+    AAS_REPO_PATH: http://shell-repository.basyx.aas/shells
+    SUBMODEL_REPO_PATH: http://submodel-repository.basyx.aas/submodels
