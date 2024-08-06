@@ -106,3 +106,7 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+env:
+  BASYX_CORS_ALLOWEDORIGINS: '*'
+  BASYX_CORS_ALLOWEDMETHODS: GET,POST,PATCH,DELETE,PUT,OPTIONS,HEAD
